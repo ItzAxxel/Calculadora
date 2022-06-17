@@ -1,0 +1,43 @@
+<h1 class="text-center">Calculadora con Angular</h1>
+<br>
+
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col s12">
+      <div class="center">
+        <div class="row">
+          <div class="col s12 m6  mx-auto">
+
+            <p>Ingresa el primer número:</p> <input type="number" [(ngModel)]="n1" />
+            <p>Ingresa el segundo número:</p> <input type="number" [(ngModel)]="n2" />
+            <div *ngIf="n1 >= 0 && n2 >= 0; else elseBlock">
+              <br>
+              <div class="gap-3 d-md-flex justify-content-md-center mb-3">
+                <button class="btn btn-primary btn-color btn-bg-color ps-2" type="button"
+                  (click)="sumar()">Sumar</button>
+                <button class="btn btn-primary btn-color btn-bg-color margin-left" type="button"
+                  (click)="restar()">Restar</button>
+                <button class="btn btn-primary btn-color btn-bg-color  margin-left" type="button"
+                  (click)="multiplicar()">Multiplicar</button>
+                <button class="btn btn-primary btn-color btn-bg-color margin-left" type="button"
+                  (click)="dividir()">Dividir</button>
+                <button class="btn btn-primary btn-color btn-bg-color  margin-left" type="button"
+                  (click)="borrar()">Borrar</button>
+              </div>
+              <h3 class="mt-2">Resultado: {{result}}</h3>
+            </div>
+            <ng-template #elseBlock>¡No puedes poner números inferiores a 0!</ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h5 class="text-center mt-5">Made by: Axel :)</h5>
+<img class="mx-auto d-block" src="assets/bob_esponja.gif" alt="">
+
+
+
+<router-outlet></router-outlet>
